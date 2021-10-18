@@ -22896,40 +22896,58 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MainView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+            movies: [
+                {
+                    _id: 1,
+                    Title: 'Inception',
+                    Description: 'desc1...',
+                    ImagePath: '...'
+                },
+                {
+                    _id: 2,
+                    Title: 'The Shawshank Redemption',
+                    Description: 'desc2...',
+                    ImagePath: '...'
+                },
+                {
+                    _id: 3,
+                    Title: 'Gladiator',
+                    Description: 'desc3...',
+                    ImagePath: '...'
+                }
+            ]
+        };
+    }
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        const { movies  } = this.state;
+        if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 6
+                lineNumber: 18
             },
             __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+            children: "The list is empty!"
+        }));
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "main-view",
+            __source: {
+                fileName: "src/components/MainView/main-view.jsx",
+                lineNumber: 21
+            },
+            __self: this,
+            children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 7
+                        lineNumber: 22
                     },
                     __self: this,
-                    children: "Inception"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    __source: {
-                        fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 8
-                    },
-                    __self: this,
-                    children: "The Shawshank Redemption"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    __source: {
-                        fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 9
-                    },
-                    __self: this,
-                    children: "Gladiator"
-                })
-            ]
+                    children: movie.Title
+                }, movie._id)
+            )
         }));
     }
 }
