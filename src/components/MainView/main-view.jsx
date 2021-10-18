@@ -7,9 +7,30 @@ export class MainView extends React.Component {
         super();
         this.state = {
             movies: [
-                {_id: 1, Title: 'Inception', Description: 'desc1...', ImagePath: '...'},
-                {_id: 2, Title: 'The Shawshank Redemption', Description: 'desc2...', ImagePath: '...'},
-                {_id: 3, Title: 'Gladiator', Description: 'desc3...', ImagePath: '...'}
+                {
+                    _id: 1,
+                    Title: 'Jojo Rabbit',
+                    Description: 'A young German boy in the Hitler Youth whose hero and imaginary friend is the country\'s dictator is shocked to discover that his mother is hiding a Jewish girl in their home.',
+                    Genres: 'Adventure',
+                    Director: 'Taika Waititi',
+                    ImagePath: './images/jojorabbit.png'
+                },
+                {
+                    _id: 2,
+                    Title: 'Fantastic Mr.Fox',
+                    Description: 'An urbane fox cannot resist returning to his farm raiding ways and then must help his community survive the farmers\' retaliation.',
+                    Director: 'Wes Anderson',
+                    Genres: ['Animation', 'Adventure' ],
+                    ImagePath: 'src/images/fantasticmrfox.png'
+                },
+                {
+                    _id: 3,
+                    Title: 'Spirited Away',
+                    Description: 'During her family\'s move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.',
+                    Director: 'Hayao Miyazaki',
+                    Genres: ['Adventure', 'Animation'],
+                    ImagePath: './images/spiritedaway.png'
+                }
             ],
             selectedMovie: null
         };
@@ -29,8 +50,8 @@ export class MainView extends React.Component {
         return (
             <div className="main-view">
                 {selectedMovie ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => {
-                        this.setSelectedMovie(newSelectedMovie);
-                    }}/> : movies.map(movie =>
+                    this.setSelectedMovie(newSelectedMovie);
+                }}/> : movies.map(movie =>
                     (<MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => {
                             this.setSelectedMovie(movie)
                         }}/>
