@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from './registration-view.scss';
 
 
 export function RegistrationView(props) {
@@ -13,25 +14,27 @@ export function RegistrationView(props) {
     };
 
     return (
+        <div class="form-group">
         <form>
             <label>
                 Email:
-                <input type="text" value={email} onChange={e => setEmail(e.target.value)}/>
+                <input type="email" class="form-control" value={email} onChange={e => setEmail(e.target.value)}/>
             </label>
             <label>
                 Username:
-                <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
+                <input type="text" class="form-control" value={username} onChange={e => setUsername(e.target.value)}/>
 
             </label>
             <label>
                 Password:
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
+                <input type="password" class="form-control" value={password} onChange={e => setPassword(e.target.value)}/>
             </label>
             <label>
                 Confirm Password:
-                <input type="password" value={password}/>
+                <input type="password" class="form-control" value={password}/>
             </label>
             <button type="submit" onClick={handleSubmit}>Register</button>
         </form>
+        </div>
     );
 }
