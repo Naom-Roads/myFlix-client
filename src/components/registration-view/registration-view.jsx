@@ -27,7 +27,11 @@ export function RegistrationView(props) {
                 Password:
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
             </label>
-            <button type="submit" onClick={handleSubmit}>Submit</button>
+            <label>
+                Confirm Password:
+                <input type="password" value={password}/>
+            </label>
+            <button type="submit" onClick={handleSubmit}>Register</button>
         </form>
     );
 }
