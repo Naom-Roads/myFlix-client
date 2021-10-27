@@ -9,6 +9,7 @@ export function LoginView(props) {
         e.preventDefault();
         console.log(username, password);
         props.onLoggedIn(username);
+
     };
 
     return (
