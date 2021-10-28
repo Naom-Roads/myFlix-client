@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import styled from 'styled-components';
 
 export function LoginView(props) {
     const [ username, setUsername ] = useState('');
@@ -17,7 +17,6 @@ export function LoginView(props) {
             <label>
                 Username:
                 <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
-
             </label>
             <label>
                 Password:
