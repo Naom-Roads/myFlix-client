@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/naom-roads/myFlix-client/issues"
   },
-  "homepage": "https://naom-roads.github.io/myFlix-client/",
+  "homepage": "https://github.com/naom-roads/myFlix-client",
   "dependencies": {
     "@parcel/install-package": "^2.0.0-alpha.1",
     "axios": "^0.23.0",
